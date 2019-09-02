@@ -3,7 +3,6 @@
 from bbs import blum_blum_shub
 
 def main():
-  print("Hello")
   blum_blum_shub(11, 19, 3)
 
 if __name__ == "__main__":
