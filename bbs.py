@@ -12,6 +12,7 @@ class BlumBlumShub:
     self.p = p
     self.q = q
     self.s = s
+    self.x = s # x[0] = s
     self.m = p * q
 
     self.check_seed()
@@ -28,5 +29,7 @@ class BlumBlumShub:
       print(red(f"Error: The seed {self.s} is not a coprime to m."))
       exit(1)
 
-  def next():
-    print("TODO")
+  def next(self):
+    # x[n+1] = x[n]^2 % m
+    self.x = pow(self.x, 2, self.m)
+    return(self.x)
