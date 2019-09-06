@@ -7,7 +7,7 @@ from colors import red, yellow
 class BlumBlumShub:
   def __init__(self, p, q, s):
     print(yellow("Blum Blum Shub algorithm"))
-    print(f"p = {p}, q = {q}, s = {s}")
+    print(f"p = {p}\nq = {q}\ns = {s}\n")
 
     self.p = p
     self.q = q
