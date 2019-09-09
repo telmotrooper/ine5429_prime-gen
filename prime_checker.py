@@ -1,8 +1,10 @@
 from random import randrange
 from colors import red
 
+mr_round = 8
+
 def miller_rabin(num):
-  # return(None)
+  continue_outer_loop = False
 
   s = 0
   d = num-1
@@ -16,5 +18,23 @@ def miller_rabin(num):
     print(red(f"Error: Couldn't factor {num}."))
     exit(1)
 
-  a = randrange(2, num-2)
-  # print(a)
+  for i in range(0, mr_round):
+    a = randrange(2, num-2 + 1) # [2,num-2]
+    x = pow(a,d, num)
+
+    if x == 1 or x == num - 1:
+      continue
+
+    for j in range(0, s-1):
+      x = pow(x,2,num)
+
+      if x == num-1:
+        continue_outer_loop = True
+        break
+    
+    if continue_outer_loop:
+      continue
+    
+    return False
+  
+  return True

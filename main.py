@@ -29,9 +29,11 @@ def main():
     pow(2,256)
   )
 
-  # for i in range(0,5):
-  #   num = lcg.next()
-  #   print(f"{num} ({sys.getsizeof(num)} bytes)")
+  for i in range(0,5):
+    num = lcg.next()
+    print(f"{num} ({sys.getsizeof(num)} bytes)")
+
+  print(miller_rabin(961748941))
 
 if __name__ == "__main__":
   main()

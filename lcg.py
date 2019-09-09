@@ -1,5 +1,4 @@
 from math import gcd
-from sys import exit
 from colors import red, yellow
 
 # https://en.wikipedia.org/wiki/Blum_Blum_Shub
