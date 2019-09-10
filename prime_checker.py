@@ -1,9 +1,9 @@
 from random import randrange
 from colors import red
 
-mr_round = 8
-
 def miller_rabin(num):
+  mr_round = 8
+
   continue_outer_loop = False
 
   s = 0

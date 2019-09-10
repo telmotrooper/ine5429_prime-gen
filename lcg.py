@@ -1,7 +1,7 @@
 from math import gcd
 from colors import red, yellow
 
-# https://en.wikipedia.org/wiki/Blum_Blum_Shub
+# https://en.wikipedia.org/wiki/Linear_congruential_generator
 
 class LinearCongruentialGenerator:
   def __init__(self, a, x0, c, m):
