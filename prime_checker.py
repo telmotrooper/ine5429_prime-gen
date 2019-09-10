@@ -2,7 +2,7 @@ from random import randrange
 from colors import red
 
 def miller_rabin(num):
-  mr_round = 8
+  mr_round = 1000
 
   continue_outer_loop = False
 
