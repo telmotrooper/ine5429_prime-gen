@@ -16,24 +16,24 @@ def main():
 
   for i in range(0,5):
     num = bbs.next()
-    print(f"{num} ({sys.getsizeof(num)} bytes)")
+    print(f"{num} ({sys.getsizeof(num)*8} bits)")
     print(f"Miller-Rabin: {miller_rabin(num)}")
 
 
-  print()
+  # print()
 
-  lcg = LinearCongruentialGenerator(
-    214445054984098409049809823424242434013,
-    423423424242342342534801656010161045634,
-    6465467547567567777854535156123477546456354,
-    pow(2,256)
-  )
+  # lcg = LinearCongruentialGenerator(
+  #   214445054984098409049809823424242434013,
+  #   423423424242342342534801656010161045634,
+  #   6465467547567567777854535156123477546456354,
+  #   pow(2,256)
+  # )
 
-  for i in range(0,5):
-    num = lcg.next()
-    print(f"{num} ({sys.getsizeof(num)} bytes)")
+  # for i in range(0,5):
+  #   num = lcg.next()
+  #   print(f"{num} ({sys.getsizeof(num)*8} bits)")
 
-  print(miller_rabin(961748941))
+  # print(miller_rabin(961748941))
 
 if __name__ == "__main__":
   main()
