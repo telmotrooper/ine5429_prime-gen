@@ -1,9 +1,9 @@
 from random import randrange
 from colors import red
 
-def miller_rabin(num):
-  mr_round = 100
+num_rounds = 100
 
+def miller_rabin(num):
   continue_outer_loop = False
 
   s = 0
@@ -18,7 +18,7 @@ def miller_rabin(num):
     print(red(f"Error: Couldn't factor {num}."))
     exit(1)
 
-  for i in range(0, mr_round):
+  for i in range(0, num_rounds):
     a = randrange(2, num-2 + 1) # [2,num-2]
     x = pow(a,d, num)
 
@@ -36,5 +36,15 @@ def miller_rabin(num):
       continue
     
     return False
+  
+  return True
+
+def fermat(num):
+  for i in range(0, num_rounds):
+    a = randrange(2, num-2 + 1) # [2,num-2]
+    x = pow(a,num-1, num)
+
+    if x != 1:
+      return False
   
   return True
