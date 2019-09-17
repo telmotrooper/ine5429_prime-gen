@@ -15,5 +15,5 @@ class LinearCongruentialGenerator:
 
   def next(self):
     # x[n+1] = ((a*x[n]) + c) % m
-    self.x = ((self.a * self.x) + self.a) % self.m
+    self.x = ((self.a * self.x) + self.c) % self.m
     return(self.x)
