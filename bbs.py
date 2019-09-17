@@ -1,5 +1,6 @@
 from math import gcd
 from colors import red, yellow
+import time
 
 # https://en.wikipedia.org/wiki/Blum_Blum_Shub
 
@@ -30,5 +31,7 @@ class BlumBlumShub:
 
   def next(self):
     # x[n+1] = x[n]^2 % m
+    # start_time = time.time()
     self.x = pow(self.x, 2, self.m)
+    # print((time.time() - start_time)*1000000)
     return(self.x)

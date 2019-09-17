@@ -1,5 +1,6 @@
 from math import gcd
 from colors import red, yellow
+import time
 
 # https://en.wikipedia.org/wiki/Linear_congruential_generator
 
@@ -15,5 +16,7 @@ class LinearCongruentialGenerator:
 
   def next(self):
     # x[n+1] = ((a*x[n]) + c) % m
+    # start_time = time.time()
     self.x = ((self.a * self.x) + self.c) % self.m
+    # print((time.time() - start_time)*1000000)
     return(self.x)
