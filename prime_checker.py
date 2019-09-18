@@ -1,7 +1,7 @@
 from random import randrange
 from colors import red
 
-num_rounds = 100
+num_rounds = 40
 
 def miller_rabin(num):
   continue_outer_loop = False

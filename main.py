@@ -5,6 +5,7 @@ from bbs import BlumBlumShub
 from lcg import LinearCongruentialGenerator
 from prime_checker import miller_rabin, fermat
 from colors import cyan
+import time
 
 def main():
   print(cyan("Prime Number Generator"))
@@ -18,19 +19,21 @@ def main():
     25214903917,
     505681814266168811,
     11,
-    pow(2,300) # 60 -> 256 bits; 300 -> 512 bits; 780 -> 1024 bits; 1720 -> 2048 bits; 3650 -> 4096 bits
+    pow(2,60) # 60 -> 256 bits; 300 -> 512 bits; 780 -> 1024 bits; 1720 -> 2048 bits; 3650 -> 4096 bits
   )
+
+  start_time = time.time()
 
   print("RUNNING")
 
-  for i in range(0,9999):
+  for i in range(0,350):
     # num = bbs.next()
     num = lcg.next()
     # print(f"\n{num} ({sys.getsizeof(num)*8} bits) (iteration {i+1})")
 
     # if fermat(num):
     if miller_rabin(num):
-      print(f"\nPRIME: {num} ({sys.getsizeof(num)*8} bits) (iteration {i+1})")
+      print(f"\nPRIME: {num} ({sys.getsizeof(num)*8} bits) (iteration {i+1}) (time {(time.time() - start_time)*1000} ms)")
 
   print("FINISHED")
 
